@@ -38,14 +38,14 @@ const APP_CONFIG = Immutable.fromJS({
     MIN_ZOOM_DISTANCE_3D: 100.0,
     REFERENCE_LABELS_LAYER_ID: "MARS_nomenclature",
     POLITICAL_BOUNDARIES_LAYER_ID: "MARS_nomenclature",
-    DEFAULT_MAP_EXTENT: [-180, -90, 180, 90]
+    // DEFAULT_MAP_EXTENT: [-180, -90, 180, 90]
+    DEFAULT_MAP_EXTENT: [
+        -179.99999001642675,
+        -89.99996889507656,
+        179.99999001642672,
+        89.99996889507656
+    ]
     // DEFAULT_PROJECTION: appStrings.PROJECTIONS.mars,
-    // DEFAULT_BBOX_EXTENT: [
-    //     -1809259.2673023238,
-    //     -1809300.1269719133,
-    //     1809259.2673023238,
-    //     1809300.1269719133
-    // ]
 });
 
 // define and export the final config

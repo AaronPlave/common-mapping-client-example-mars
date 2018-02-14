@@ -1,0 +1,7 @@
+{
+	"title": "MGS MOLA and Mars Express HRSC, Color Hillshade Blend",
+    "description": "This product was assembled from data gathered using the Viking Orbiter Imaging Systems aboard the Viking 1 and Viking 2 orbiters. Identical vidicon cameras aboard both orbiters were equipped with 475-mm focal length telephoto lenses, yielding fields of view of 1.54° X 1.69°. From an orbital altitude of 1500 km, each frame covers a minimum area on the surface of 40 X 44 km. Six selectable filters allowed color images to be acquired.",
+    "dateRange": "1999 – 2001",
+    "platform": "Mars Global Surveyor, Mars Express",
+    "spatialResolution": "~50 meters per pixel"
+}

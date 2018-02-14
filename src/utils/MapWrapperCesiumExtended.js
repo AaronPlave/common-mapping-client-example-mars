@@ -6,18 +6,15 @@
  */
 
 import MapWrapperCesium from "_core/utils/MapWrapperCesium";
-// import moment from "moment";
 import MiscUtil from "_core/utils/MiscUtil";
-// import CesiumTilingScheme_GIBS from "_core/utils/CesiumTilingScheme_GIBS";
 import * as appStrings from "_core/constants/appStrings";
 import appConfig from "constants/appConfig";
 import MapUtil from "_core/utils/MapUtil";
 import TileHandler from "_core/utils/TileHandler";
-// import "assets/cesium/Cesium.js";
-import "utils/CesiumDrawHelper.js";
 import Modernizr from "modernizr";
 
 const MARS_ELLIPSOID = new window.Cesium.Ellipsoid(3396190, 3396190, 3369200);
+window.Cesium.Ellipsoid.WGS84 = MARS_ELLIPSOID;
 
 /**
  * Wrapper class for Cesium
@@ -37,7 +34,7 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
      */
     createMap(container, options) {
         try {
-            this.cesium.Ellipsoid.WGS84 = MARS_ELLIPSOID;
+            // this.cesium.Ellipsoid.WGS84 = MARS_ELLIPSOID;
 
             // Check for webgl support
             if (!Modernizr.webgl) {
@@ -115,7 +112,6 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
             //remove all preloaded earth layers
             map.scene.globe.imageryLayers.removeAll();
 
-            console.log(this, "this");
             return map;
         } catch (err) {
             console.warn("Error in MapWrapperCesiumExtended.createMap:", err);
@@ -317,65 +313,22 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
                 currPosition.height - currPosition.height / 2,
                 appConfig.MIN_ZOOM_DISTANCE_3D
             );
-            console.log(
-                currPosition,
-                "cp",
-                currPosition.height - currPosition.height / 2,
-                appConfig.MIN_ZOOM_DISTANCE_3D,
-                newH
-            );
+
             let newPosition = currPosition.clone();
             newPosition.height = newH;
             newPosition = this.cesium.Ellipsoid.WGS84.cartographicToCartesian(newPosition);
-            console.log(
-                newPosition,
-                this.map.scene.globe.ellipsoid.cartographicToCartesian(newPosition),
-                "!!!"
-            );
+
             this.map.scene.camera.flyTo({
                 destination: newPosition,
                 duration: 0
             });
-            // let cameraHeight = this.cesium.Ellipsoid.WGS84.cartesianToCartographic(
-            //     this.map.scene.camera.position
-            // ).height;
-            // // var moveRate = cameraHeight / 450.0;
-            // this.map.scene.camera.moveForward(1000000);
-            // console.log(this.map.scene.camera,"cam")
+
             return true;
         } catch (err) {
             console.warn("Error in MapWrapperCesium.zoomIn:", err);
             return false;
         }
     }
-
-    // /**
-    //  * zoom the map in by half of the current zoom level
-    //  *
-    //  * @returns {boolean} true if it succeeds
-    //  * @memberof MapWrapperCesium
-    //  */
-    // zoomIn() {
-    //     try {
-    //         let currPosition = this.map.scene.camera.positionCartographic;
-    //         let newH = Math.max(
-    //             currPosition.height - currPosition.height / 2,
-    //             appConfig.MIN_ZOOM_DISTANCE_3D
-    //         );
-    //         let newPosition = currPosition.clone();
-    //         newPosition.height = newH;
-    //         newPosition = this.map.scene.globe.ellipsoid.cartographicToCartesian(newPosition);
-    //         console.log(currPosition, "cp", currPosition.height - currPosition.height / 2, appConfig.MIN_ZOOM_DISTANCE_3D, newPosition);
-    //         this.map.scene.camera.flyTo({
-    //             destination: newPosition,
-    //             duration: 0.175
-    //         });
-    //         return true;
-    //     } catch (err) {
-    //         console.warn("Error in MapWrapperCesium.zoomIn:", err);
-    //         return false;
-    //     }
-    // }
 
     /**
      * zoom out by doubling the current zoom height
@@ -460,10 +413,6 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
     createGenericWMTSProvider(layer, options) {
         try {
             if (typeof options !== "undefined") {
-                let west = this.cesium.Math.toRadians(-180);
-                let south = this.cesium.Math.toRadians(-90);
-                let east = this.cesium.Math.toRadians(180);
-                let north = this.cesium.Math.toRadians(90);
                 let rectangle = this.cesium.Rectangle.MAX_VALUE;
                 if (options.extents) {
                     rectangle = this.cesium.Rectangle.fromDegrees(
@@ -472,17 +421,17 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
                         this.cesium.Ellipsoid.WGS84
                     );
                 }
-                console.log("Rectangle", rectangle, options);
+                console.log(options, rectangle);
                 return new this.cesium.WebMapTileServiceImageryProvider({
                     url: options.url,
                     layer: options.layer,
-                    format: options.format,
+                    // format: options.format,
                     rectangle: rectangle,
                     ellipsoid: MARS_ELLIPSOID,
-                    style: "",
-                    tileMatrixSetID: options.matrixSet,
-                    minimumLevel: options.tileGrid.minZoom,
-                    maximumLevel: options.tileGrid.maxZoom,
+                    // style: "",
+                    // tileMatrixSetID: options.matrixSet,
+                    // minimumLevel: options.tileGrid.minZoom,
+                    // maximumLevel: options.tileGrid.maxZoom,
                     tilingScheme: this.createTilingScheme(
                         {
                             handleAs: layer.get("handleAs"),
@@ -515,22 +464,16 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
             canvas: this.map.scene.canvas,
             show: layer.get("isActive")
         });
-        // kmlSource.loadingEvent.addEventListener(() => {console.log("loaded")})
-        // console.log(kmlSource)
         let distanceCondition = new this.cesium.DistanceDisplayCondition(10.0, 200000.0);
         kmlSource.then(dataSource => {
             let entities = dataSource.entities.values;
-            console.log(entities, "entities");
             for (let i = 0; i < entities.length; i++) {
                 let entity = entities[i];
-                // console.log("?", entity);
                 // Adjust the vertical origin so pins sit on terrain
                 if (entity.billboard) {
                     entity.billboard = undefined;
                 }
                 if (entity.label) {
-                    // console.log(entity.label.distanceCondition)
-                    // entity.label.distanceDisplayCondition = distanceCondition;
                     entity.label.distanceDisplayCondition = new this.cesium.DistanceDisplayCondition(
                         10.0,
                         180000000.0
@@ -551,10 +494,31 @@ export default class MapWrapperCesiumExtended extends MapWrapperCesium {
                     );
                 }
             }
-            // dataSource.loadingEvent.addEventListener(() => {
-            //     console.log("loaded");
-            // });
         });
         return kmlSource;
+    }
+
+    /**
+     * Bring layer into view
+     *
+     * @param {ImmutableJS.Map} layer layer object from map state in redux
+     * @memberof MapWrapperCesiumExtended
+     * @returns {boolean} true if zooming succeeds
+     */
+    zoomToLayer(layer) {
+        try {
+            this.map.camera.flyTo({
+                destination: this.cesium.Rectangle.fromDegrees(
+                    ...layer.getIn(["wmtsOptions", "extents"]),
+                    null,
+                    this.cesium.Ellipsoid.WGS84
+                ),
+                duration: 0
+            });
+            return true;
+        } catch (err) {
+            console.warn("Error in MapWrapperCesiumExtended.zoomToLayer:", err);
+            return false;
+        }
     }
 }

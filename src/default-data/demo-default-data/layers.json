@@ -8,6 +8,7 @@
             "updateParameters": { "time": false },
             "isDefault": true,
             "wmtsOptions": {
+                "projection": "EPSG:4326",
                 "layer": "Mars_Viking_MDIM21_ClrMosaic_global_232m",
                 "url":
                     "http://mars-2035432769.us-west-1.elb.amazonaws.com/catalog/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0/default/default028mm/{TileMatrix}/{TileRow}/{TileCol}.jpg",
@@ -31,7 +32,7 @@
             "type": "reference",
             "handleAs": "vector_kml",
             "updateParameters": { "time": false },
-            "url": "default-data/demo-default-data/MARS_nomenclature2.kml",
+            "url": "default-data/demo-default-data/MARS_nomenclature.kml",
             "metadata": {
                 "url": "default-data/demo-default-data/layer-metadata/flight_paths_kml.json",
                 "handleAs": "json"
@@ -58,11 +59,9 @@
                 }
             },
             "metadata": {
-                "description":
-                    "This data was acquired using the Mars Orbiter Laser Altimeter instrument aboard NASA’s Mars Global Surveyor spacecraft (MGS). MGS was launched on November 7, 1996 and arrived at Mars on September 11, 1997. It maintained a circular polar orbit, completing an orbital revolution every 117.65 minutes at an average altitude of 378 km (235 mi). Until November 2, 2006, MGS characterized and mapped Mars’ surface features, properties, topography, composition, and processes, as well as studied Mars’ weather and atmospheric structure. The Mars Orbiter Laser Altimeter (MOLA) made precise measurements of the heights and depths of surface features on Mars. MOLA fired infrared laser pulses downward 10 times per second, and measured the time it took for the reflected pulses to return from the surface. Converting this data to a colorized hillshade makes it particularly easy to visualize surface topography. The image used for the base of this map represents more than 600 million measurements gathered between 1999 and 2001. The average accuracy of each point is originally ~100 meters in horizontal position and the total elevation uncertainty is at least ±3 m.",
-                "dateRange": "1999 - 2001",
-                "platform": "Viking Orbiters",
-                "spatialResolution": "100 meters per pixel"
+                "url":
+                    "default-data/demo-default-data/layer-metadata/Mars_MGS_MOLA_ClrShade_merge_global_463m.json",
+                "handleAs": "json"
             }
         },
         {
@@ -85,11 +84,9 @@
                 }
             },
             "metadata": {
-                "description":
-                    "This global geologic map of Mars, which records the distribution of geologic units and landforms on the planet's surface through time, is based on unprecedented variety, quality, and quantity of remotely sensed data acquired since the Viking Orbiters. These data have provided morphologic, topographic, spectral, thermophysical, radar sounding, and other observations for integration, analysis, and interpretation in support of geologic mapping. In particular, the precise topographic mapping now available has enabled consistent morphologic portrayal of the surface for global mapping (whereas previously used visual-range image bases were less effective, because they combined morphologic and albedo information and, locally, atmospheric haze). Also, thermal infrared image bases used for this map tended to be less affected by atmospheric haze and thus are reliable for analysis of surface morphology and texture at even higher resolution than the topographic products. USGS, 2014, Kenneth L. Tanaka, James A. Skinner, Jr., James M. Dohm, Rossman P. Irwin, III, Eric J. Kolb, Corey M. Fortezzo, Thomas Platz, Gregory G. Michael, and Trent M. Hare",
-                "dateRange": "1999 - 2001",
-                "platform": "Mars Global Surveyor",
-                "spatialResolution": "–"
+                "url":
+                    "default-data/demo-default-data/layer-metadata/Mars_MGS_MOLA_ClrShade_merge_global_463m.json",
+                "handleAs": "json"
             }
         },
         {
@@ -113,11 +110,9 @@
                 }
             },
             "metadata": {
-                "description":
-                    "This data was acquired using the Mars Orbiter Laser Altimeter instrument aboard NASA’s Mars Global Surveyor spacecraft (MGS). MGS was launched on November 7, 1996 and arrived at Mars on September 11, 1997. It maintained a circular polar orbit, completing an orbital revolution every 117.65 minutes at an average altitude of 378 km (235 mi). Until November 2, 2006, MGS characterized and mapped Mars’ surface features, properties, topography, composition, and processes, as well as studied Mars’ weather and atmospheric structure. The Mars Orbiter Laser Altimeter (MOLA) made precise measurements of the heights and depths of surface features on Mars. MOLA fired infrared laser pulses downward 10 times per second, and measured the time it took for the reflected pulses to return from the surface. Converting this data to a colorized hillshade makes it particularly easy to visualize surface topography. The image used for the base of this map represents more than 600 million measurements gathered between 1999 and 2001. The average accuracy of each point is originally ~100 meters in horizontal position and the total elevation uncertainty is at least ±3 m.",
-                "dateRange": "1999 - 2001",
-                "platform": "Viking Orbiters",
-                "spatialResolution": "100 meters per pixel"
+                "url":
+                    "default-data/demo-default-data/layer-metadata/West_Candor_Chasma_longlat.json",
+                "handleAs": "json"
             }
         },
         {
@@ -141,11 +136,8 @@
                 }
             },
             "metadata": {
-                "description":
-                    "This data was acquired using the Mars Orbiter Laser Altimeter instrument aboard NASA’s Mars Global Surveyor spacecraft (MGS). MGS was launched on November 7, 1996 and arrived at Mars on September 11, 1997. It maintained a circular polar orbit, completing an orbital revolution every 117.65 minutes at an average altitude of 378 km (235 mi). Until November 2, 2006, MGS characterized and mapped Mars’ surface features, properties, topography, composition, and processes, as well as studied Mars’ weather and atmospheric structure. The Mars Orbiter Laser Altimeter (MOLA) made precise measurements of the heights and depths of surface features on Mars. MOLA fired infrared laser pulses downward 10 times per second, and measured the time it took for the reflected pulses to return from the surface. Converting this data to a colorized hillshade makes it particularly easy to visualize surface topography. The image used for the base of this map represents more than 600 million measurements gathered between 1999 and 2001. The average accuracy of each point is originally ~100 meters in horizontal position and the total elevation uncertainty is at least ±3 m.",
-                "dateRange": "1999 - 2001",
-                "platform": "Viking Orbiters",
-                "spatialResolution": "100 meters per pixel"
+                "url": "default-data/demo-default-data/layer-metadata/curiosity_hirise_mosaic.json",
+                "handleAs": "json"
             }
         }
     ]

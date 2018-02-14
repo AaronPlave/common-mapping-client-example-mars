@@ -174,4 +174,26 @@ export default class MapWrapperOpenlayersExtended extends MapWrapperOpenlayers {
             })
         });
     }
+
+    /**
+     * Bring layer into view
+     *
+     * @param {ImmutableJS.Map} layer layer object from map state in redux
+     * @memberof MapWrapperOpenlayersExtended
+     * @returns {boolean} true if zooming succeeds
+     */
+    zoomToLayer(layer) {
+        try {
+            let mapSize = this.map.getSize() || [];
+            this.map.getView().fit(layer.getIn(["wmtsOptions", "extents"]).toJS(), {
+                size: mapSize,
+                duration: 1000,
+                constrainResolution: false
+            });
+            return true;
+        } catch (err) {
+            console.warn("Error in MapWrapperOpenlayers.zoomToLayer:", err);
+            return false;
+        }
+    }
 }

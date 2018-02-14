@@ -16,20 +16,25 @@ import * as mapActions from "_core/actions/mapActions";
 import * as appStrings from "_core/constants/appStrings";
 import appConfig from "constants/appConfig";
 import MiscUtil from "_core/utils/MiscUtil";
-import { MapContainer, MapContextMenu, CoordinateTracker } from "_core/components/Map";
-import { MapControlsContainer } from "components/Map";
-import { ShareContainer } from "components/Share";
+import {
+    MapContainer,
+    MapContextMenu,
+    CoordinateTracker,
+    MapControlsContainer
+} from "_core/components/Map";
+import { ShareContainer } from "_core/components/Share";
 import { LayerInfoContainer } from "_core/components/LayerInfo";
 import { SettingsContainer } from "_core/components/Settings";
 import { LoadingContainer } from "_core/components/Loading";
-import { HelpContainer } from "_core/components/Help";
+import { HelpContainer } from "components/Help";
 import { AlertsContainer } from "_core/components/Alerts";
 import { AppBarContainer } from "_core/components/AppBar";
-import { LayerMenuContainer } from "_core/components/LayerMenu";
+import { LayerMenuContainer } from "components/LayerMenu";
 import { MouseFollowerContainer } from "_core/components/MouseFollower";
 import { AnalyticsContainer } from "_core/components/Analytics";
 import { KeyboardControlsContainer } from "_core/components/KeyboardControls";
 import styles from "_core/components/App/AppContainer.scss";
+import stylesExtended from "components/App/AppContainer.scss";
 import displayStyles from "_core/styles/display.scss";
 
 const theme = createMuiTheme({
@@ -37,9 +42,22 @@ const theme = createMuiTheme({
         htmlFontSize: 10
     },
     palette: {
-        primary: pink
+        primary: {
+            main: "#dd2c00",
+            light: "#ff6434",
+            dark: "#a30000",
+            contrastText: "#fff"
+        }
     }
 });
+// const theme = createMuiTheme({
+//     typography: {
+//         htmlFontSize: 10
+//     },
+//     palette: {
+//         primary: pink
+//     }
+// });
 
 export class AppContainer extends Component {
     constructor(props) {
@@ -113,7 +131,7 @@ export class AppContainer extends Component {
                     <HelpContainer />
                     <MapContainer />
                     <LoadingContainer />
-                    <MapControlsContainer />
+                    <MapControlsContainer className={stylesExtended.mapControlContainer} />
                     <AppBarContainer />
                     <SettingsContainer />
                     <ShareContainer />
@@ -124,7 +142,7 @@ export class AppContainer extends Component {
                     <MouseFollowerContainer />
                     <AnalyticsContainer />
                     <KeyboardControlsContainer />
-                    <CoordinateTracker />
+                    <CoordinateTracker className={stylesExtended.coordinateTracker} />
                 </div>
             </MuiThemeProvider>
         );
