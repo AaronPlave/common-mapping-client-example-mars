@@ -1,13 +1,14 @@
 # Summary
 
-### Part 1
+### Example CMC Application
 
-* [Introduction](README.md)
-* Example CMC Application
-  * Customizing
-  * Adding Some Layers
-    * Test
-  * Customizing
+* Getting Started
+* Adding Some Layers
+* Adding Mars Terrain
+* Adding "Fly To" Layer Functionality
+* Customizing Help Modal Content
+* Tweaking Measurements for Mars
+* Changing the App Theme
 
 
 
