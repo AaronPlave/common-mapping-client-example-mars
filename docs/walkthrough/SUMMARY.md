@@ -3,7 +3,11 @@
 ### Part 1
 
 * [Introduction](README.md)
-* [Getting Started](getting_started.md)
+* Example CMC Application
+  * Customizing
+  * Adding Some Layers
+    * Test
+  * Customizing
 
 
 
