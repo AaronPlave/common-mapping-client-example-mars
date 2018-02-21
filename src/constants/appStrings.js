@@ -1,6 +1,5 @@
 export const PROJECTIONS = {
     mars: {
-        // code: "IAU2000:49900",
         code: "EPSG:104905",
         proj4Def:
             'GEOGCS["GCS_Mars_2000",DATUM["D_Mars_2000",SPHEROID["Mars_2000_IAU_IAG",3396190.0,169.8944472236118]],PRIMEM["Reference_Meridian",0.0],UNIT["Degree",0.0174532925199433],AUTHORITY["ESRI",104905]]',
