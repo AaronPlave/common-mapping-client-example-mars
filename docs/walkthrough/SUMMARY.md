@@ -5,8 +5,8 @@
 * [Introduction](README.md)
 * [Getting Started](getting-started/README.md)
   * [Adding a New App Container](getting-started/adding-a-new-app-container.md)
-  * [Changing the App Title](getting-started/changing-the-app-title.md)
   * [Changing the App Color Theme](getting-started/changing-the-app-color-theme.md)
+  * [Changing the App Title](getting-started/changing-the-app-title.md)
 * Adding Map Layers
   * Copying over default data
   * Adding layer configurations
