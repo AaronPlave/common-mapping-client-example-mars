@@ -11,6 +11,7 @@ These instructions assume you have cloned the Common Mapping Client repository a
 This walkthrough is broken up into a series of modules which cover different concepts. Each module will build upon the previous module and iteratively help you become more comfortable with CMC.
 
 The following modules are offered in this walkthrough:
+TODO COPY SUMMARY INFO WHEN DONE
 * Adding Map Layers
 * Adding Mars Terrain
 * Adding "Fly To" Layer Functionality
