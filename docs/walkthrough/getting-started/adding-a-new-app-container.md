@@ -6,15 +6,18 @@ The first step that almost all CMC-based applications will need to take is to su
 
 First, we copy over the contents of `src/_core/components/App` into `src/components/App`, replacing the existing `src/components/App/AppContainer` file. 
 
+
 Next, in our newly created `index.js` file under `src/components/App/` we will modify the component export to reflect the path of our custom `AppContainer` component.
 
 ```JS
 export { default as AppContainer } from "components/App/AppContainer.js";
 ```
-Note that our webpack is configured to search for imports under the `src` and `assets` directory
+
+_Note that our webpack setup is configured to search for imports under the `src` and `assets` directory which is why the import paths in this walkthrough will not include `src` or `assets` prefixes._
 ```JS
 resolve: {
         modules: [path.join(BASE_DIR, "src"), path.join(BASE_DIR, "assets"), "node_modules"], // Tell webpack to look for imports using these prefixes
         ...
 },
 ```
+
