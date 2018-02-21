@@ -21,7 +21,6 @@ resolve: {
 },
 ```
 
-
 ## Modifying the index.js application entry point
 
 Next we will modify the application entrypoint file `index.js` found at `src/index.js` to use our new `AppContainer`. This entrypoint is defined in our webpack configuration.
