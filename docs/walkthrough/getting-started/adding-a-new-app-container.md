@@ -21,3 +21,9 @@ resolve: {
 },
 ```
 
+Now we will modify the app entrypoint file `index.js` found at `src/index.js` to use our new `AppContainer`.
+```JS
+import { AppContainer } from "components/App";
+```
+
+Now save your work and refresh your application [localhost:3000](http://localhost:3000). The application should look identical to what we started with, but that's because we haven't made any modifications to our cloned `AppContainer` yet.
