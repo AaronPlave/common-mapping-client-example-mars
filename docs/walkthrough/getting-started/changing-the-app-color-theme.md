@@ -32,5 +32,6 @@ We're almost done customizing the main colors of our application but there's one
 $color-secondary: #dd2c00;
 ```
 
+Now if we look at our application in the browser we may not see an immediate change in the default state but if we open up something like the help menu or turn on a map layer we should see that our primary color is now being used.
 
 
