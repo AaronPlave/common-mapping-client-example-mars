@@ -7,7 +7,7 @@
   * [Adding a new app container](getting-started/adding-a-new-app-container.md)
   * [Changing the app color theme](getting-started/changing-the-app-color-theme.md)
   * [Changing the app title](getting-started/changing-the-app-title.md)
-* Adding Map Layers
+* [Adding Map Layers](adding-map-layers.md)
   * [Copying over default data](copying-over-default-data.md)
   * Adding layer configurations
   * [Overriding core vector layer styling](overriding-core-vector-layer-styling.md)
