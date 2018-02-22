@@ -1,6 +1,6 @@
 # Summary
 
-## CMC Example Application
+## CMC Walkthrough
 
 * [Introduction](README.md)
 * [Getting Started](getting-started/README.md)
