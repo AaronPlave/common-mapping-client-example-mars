@@ -1,1 +1,0 @@
-- override map reducer `measureGeometry` to account for Mars radius, note how this is a rough calculation based off an approximate size and that it doesn't take into account things like terrain, see MarsTrek for a more accurate distance calculation.

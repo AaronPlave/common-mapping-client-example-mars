@@ -1,4 +1,4 @@
-# Adding layer metadata
+# Adding Layer Metadata
 
 Now that we have the right layers showing up on the map let's add some metadata to our layers so that we can populate the layer information pages. These layer info pages can be accessed for data layers by clicking on the information icons on the right side of each layer in map controls. To add metadata for these layers we'll need to grab metadata from MarsTrek, add this metadata into our `demo-default-data`, and give our data layers the correct paths to their corresponding metadata files.
 - Note: basemap and place labels don't have an info flyout since they aren't data layers, you'd have to add some other way to do this or change them into data layers.
