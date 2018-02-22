@@ -16,7 +16,7 @@
   * [Changing the Cesium Ellipsoid](adjustments-for-the-3D-map/changing-the-cesium-ellipsoid.md)
   * [Adding 3D Terrain](adjustments-for-the-3D-map/adding-3d-terrain.md)
 * [Tweaking Measurements for Mars](tweaking-measurements-for-mars/README.md)
-* [Extending and Replacing Core Components](extending-and-replacing-core-components/README.me)
+* [Extending and Replacing Core Components](extending-and-replacing-core-components/README.md)
   * [Adding "fly to" layer functionality](extending-and-replacing-core-components/adding-fly-to-layer-functionality.md)
   * [Customizing help modal content](extending-and-replacing-core-components/customizing-help-modal-content.md)
 
