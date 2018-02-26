@@ -18,11 +18,6 @@
                     "tileSize": 256
                 }
             },
-            "metadata": {
-                "url":
-                    "default-data/demo-default-data/layer-metadata/VIIRS_SNPP_CorrectedReflectance_TrueColor.json",
-                "handleAs": "json"
-            },
             "thumbnailImage":
                 "http://mars-2035432769.us-west-1.elb.amazonaws.com/catalog/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0/default/default028mm/1/0/2.png"
         },
@@ -94,7 +89,7 @@
             "title": "CTX Mosaic - West Candor Chasma",
             "type": "data",
             "thumbnailImage":
-                "http://d1poygwgh8gv6r.cloudfront.net/catalog/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0//default/default028mm/1/1/1.jpg",
+                "https://moontrek.jpl.nasa.gov/trektiles/Mars/EQ/West_Candor_Chasma_longlat/thumbnail/West_Candor_Chasma_longlat-200.png",
             "handleAs": "wmts_raster",
             "updateParameters": { "time": false },
             "wmtsOptions": {
@@ -112,6 +107,32 @@
             "metadata": {
                 "url":
                     "default-data/demo-default-data/layer-metadata/West_Candor_Chasma_longlat.json",
+                "handleAs": "json"
+            }
+        },
+        {
+            "id": "mars_pahrump_patch_8k_256m",
+            "title": "MSL, Pahrump Hills",
+            "type": "data",
+            "thumbnailImage":
+                "https://moontrek.jpl.nasa.gov/trektiles/Mars/EQ/mars_pahrump_patch_8k_256m/thumbnail/mars_pahrump_patch_8k_256m-200.png",
+            "handleAs": "wmts_raster",
+            "updateParameters": { "time": false },
+            "wmtsOptions": {
+                "extents": [137.3752976,-4.6651732,137.3796184,-4.6608555],
+                "projection": "EPSG:4326",
+                "layer": "mars_pahrump_patch_8k_256m",
+                "url":
+                    "https://trektiles.jpl.nasa.gov/trektiles/Mars/EQ/mars_pahrump_patch_8k_256m/1.0.0/default/default028mm/{TileMatrix}/{TileRow}/{TileCol}.png",
+                "tileGrid": {
+                    "minZoom": 0,
+                    "maxZoom": 18,
+                    "tileSize": 256
+                }
+            },
+            "metadata": {
+                "url":
+                    "default-data/demo-default-data/layer-metadata/mars_pahrump_patch_8k_256m.json",
                 "handleAs": "json"
             }
         },

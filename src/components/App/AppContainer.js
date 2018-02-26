@@ -50,14 +50,6 @@ const theme = createMuiTheme({
         }
     }
 });
-// const theme = createMuiTheme({
-//     typography: {
-//         htmlFontSize: 10
-//     },
-//     palette: {
-//         primary: pink
-//     }
-// });
 
 export class AppContainer extends Component {
     constructor(props) {
